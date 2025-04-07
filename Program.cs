@@ -16,7 +16,7 @@ namespace Part_5__Decisions
 
 
 
-            if (angle < 315 || angle < 45)
+            if (angle <= 315 && angle < 45)
                 Console.WriteLine("The direction is NORTH");
             else if (angle >= 45 && angle < 135)
                 Console.WriteLine("The direction is East");
@@ -38,7 +38,7 @@ namespace Part_5__Decisions
 
 
             Console.WriteLine("Enter the number of minutes you parked:  ");
-            while (!double.TryParse(Console.ReadLine(), out minutes))
+            while (!double.TryParse(Console.ReadLine(), out minutes) || minutes < 0)
                 Console.WriteLine(" Invalid number, please try again");
 
            hours = Math.Ceiling (minutes / 60);
